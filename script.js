@@ -3,7 +3,7 @@
 // 2) Editá los establecimientos de la lista DIRECTORY cuando tengas datos revisados.
 // No publiques horarios/teléfonos sin comprobarlos con una fuente actual.
 
-const MAP_EMBED_URL = ""; // Ej.: https://www.google.com/maps/d/embed?mid=...
+const MAP_EMBED_URL = "https://www.google.com/maps/d/embed?mid=1Ndle0As81r-PWFUAcpl8mJTIh_fudaA&ehbc=2E312F"; // Ej.: https://www.google.com/maps/d/embed?mid=...
 
 const DIRECTORY = [
  {name:"Centro de Salud U.F.O. (Manuelita)",party:"San Miguel",locality:"San Miguel",address:"Pringles 2801 (dirección a confirmar)",hours:"Horario de consejería: pendiente de confirmar",phone:"No publicado en esta versión",services:"Se mencionan servicios de ginecología y obstetricia en directorios municipales; consejería específica pendiente de confirmar.",status:"Pendiente de verificación",source:"Directorio municipal mencionado en el relevamiento preliminar."},
