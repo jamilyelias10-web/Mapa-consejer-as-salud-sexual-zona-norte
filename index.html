@@ -1,84 +1,622 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#145c53">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7652a8">
 <title>Mapa de Acceso a la Salud Sexual y Reproductiva</title>
+
 <style>
-:root{--ink:#183b38;--muted:#617572;--green:#145c53;--mint:#dff3e9;--coral:#ff806b;--yellow:#ffe49a;--lilac:#e9e1ff;--paper:#fbfaf7;--line:#e3e9e5;--white:#fff;--shadow:0 14px 35px rgba(24,59,56,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--green)}button,input,select{font:inherit}.wrap{width:min(1120px,92%);margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;padding:17px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.03em}.logo{width:42px;height:42px;border-radius:14px;background:var(--green);color:white;display:grid;place-items:center;font-size:22px}.nav{display:flex;gap:19px;flex-wrap:wrap}.nav a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:650}.hero{background:var(--green);color:white;border-radius:30px;padding:clamp(28px,6vw,66px);position:relative;overflow:hidden}.hero:after{content:"✳";position:absolute;font-size:230px;right:2%;top:-60px;color:rgba(255,255,255,.08);transform:rotate(15deg)}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800;color:#bce9d8}.hero h1{font-size:clamp(35px,6vw,66px);line-height:1.02;letter-spacing:-.055em;max-width:760px;margin:15px 0}.hero p{max-width:650px;color:#e1f3ed;font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:999px;padding:12px 19px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.btn.primary{background:var(--yellow);color:var(--ink)}.btn.ghost{border:1px solid #8bbdb1;color:white}.section{padding:58px 0 8px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section h2{font-size:clamp(27px,4vw,39px);letter-spacing:-.045em;margin:0}.sub{color:var(--muted);max-width:650px;margin:8px 0 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tile,.card,.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}.tile .emoji{font-size:28px}.tile h3{margin:10px 0 5px}.tile p{margin:0;color:var(--muted);font-size:14px}.searchbar{display:grid;grid-template-columns:1fr 230px;gap:10px;margin:18px 0}.field{width:100%;border:1px solid var(--line);background:white;border-radius:14px;padding:13px 15px;color:var(--ink)}.directory{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card h3{margin:0 0 6px;font-size:19px}.meta{color:var(--muted);font-size:14px}.tag{display:inline-block;padding:5px 9px;border-radius:99px;background:#fff1ce;color:#775500;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.05em}.card p{margin:8px 0}.card a{font-weight:750}.mapbox{border:1px dashed #9ab8ae;background:#eef6f1;border-radius:24px;min-height:330px;display:grid;place-items:center;text-align:center;padding:30px}.mapbox iframe{width:100%;height:490px;border:0;border-radius:18px}.map-placeholder{max-width:520px}.map-placeholder .pin{font-size:48px}.notice{border-left:4px solid var(--coral);background:#fff2ef;padding:14px 17px;border-radius:0 14px 14px 0;color:#70443d;font-size:14px}.rights{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.right-item{padding:20px;border-radius:20px;background:var(--mint)}.right-item:nth-child(2){background:var(--lilac)}.right-item:nth-child(3){background:#fff0dc}.right-item:nth-child(4){background:#e5efff}.right-item h3{margin:0 0 5px}.faq details{padding:17px 0;border-bottom:1px solid var(--line)}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);max-width:850px}.resource-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.resource{background:white;border:1px solid var(--line);padding:17px;border-radius:16px}.resource strong{display:block}.footer{margin-top:65px;background:#123f39;color:#e3f2ed;padding:35px 0}.footer a{color:#c7f1e1}.small{font-size:12px;color:var(--muted)}.empty{color:var(--muted);padding:22px;text-align:center;grid-column:1/-1}
-@media(max-width:760px){.nav{display:none}.grid{grid-template-columns:repeat(2,1fr)}.directory,.rights,.resource-list{grid-template-columns:1fr}.searchbar{grid-template-columns:1fr}.section{padding-top:42px}.mapbox iframe{height:400px}.section-head{display:block}}
-@media(max-width:420px){.grid{grid-template-columns:1fr}.hero{border-radius:22px}}
+:root {
+  --purple: #7652a8;
+  --dark: #49316c;
+  --lavender: #eee6fa;
+  --pink: #f9e3ee;
+  --mint: #e0f2eb;
+  --cream: #fffaf5;
+  --ink: #40364b;
+  --muted: #766e80;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 15px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  color: var(--dark);
+  font-size: 15px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: var(--purple);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nav a:hover { color: var(--purple); }
+
+.hero {
+  background: linear-gradient(120deg, #eee5fa, #f9e5ef);
+  border-radius: 30px;
+  padding: clamp(30px, 6vw, 70px);
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  align-items: center;
+  gap: 25px;
+  overflow: hidden;
+}
+
+.eyebrow {
+  color: var(--purple);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.08;
+  color: var(--dark);
+  margin: 15px 0;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  color: #685b76;
+  font-size: 17px;
+  max-width: 580px;
+}
+
+.hero-art {
+  text-align: center;
+  font-size: clamp(100px, 15vw, 170px);
+  line-height: 1.2;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 13px 21px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.primary {
+  background: var(--purple);
+  color: white;
+}
+
+.secondary {
+  background: white;
+  color: var(--purple);
+}
+
+.section {
+  padding: 60px 0 5px;
+}
+
+.section h2 {
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--dark);
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.sub {
+  color: var(--muted);
+  max-width: 680px;
+  margin-top: 7px;
+}
+
+.section-head { margin-bottom: 24px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.tile {
+  padding: 24px;
+  border-radius: 23px;
+  background: white;
+  border: 1px solid #eee7f2;
+  box-shadow: 0 8px 25px rgba(70, 45, 95, .06);
+}
+
+.tile:nth-child(2),
+.tile:nth-child(5) { background: var(--pink); }
+
+.tile:nth-child(3),
+.tile:nth-child(6) { background: var(--mint); }
+
+.emoji { font-size: 32px; }
+
+.tile h3 {
+  color: var(--dark);
+  margin: 10px 0 5px;
+}
+
+.tile p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.searchbar {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #e6ddec;
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.directory {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #eee7f2;
+  border-radius: 20px;
+  padding: 23px;
+  box-shadow: 0 8px 25px rgba(70, 45, 95, .05);
+}
+
+.card h3 {
+  color: var(--dark);
+  margin: 12px 0 5px;
+}
+
+.card p { font-size: 14px; }
+
+.meta, .small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--lavender);
+  color: var(--dark);
+  border-radius: 20px;
+  padding: 5px 11px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.mapbox {
+  background: var(--lavender);
+  padding: 15px;
+  border-radius: 25px;
+  min-height: 350px;
+}
+
+.mapbox iframe {
+  width: 100%;
+  height: 490px;
+  border: 0;
+  border-radius: 17px;
+}
+
+.map-placeholder {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.rights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.right-item {
+  padding: 24px;
+  border-radius: 22px;
+  background: var(--mint);
+}
+
+.right-item:nth-child(2) { background: var(--pink); }
+.right-item:nth-child(3) { background: var(--lavender); }
+.right-item:nth-child(4) { background: #fff0d8; }
+
+.right-item h3 { color: var(--dark); }
+
+.notice {
+  background: #fff0ed;
+  border-left: 4px solid #e88b9d;
+  padding: 17px;
+  border-radius: 0 15px 15px 0;
+  font-size: 14px;
+}
+
+.faq details {
+  padding: 19px 0;
+  border-bottom: 1px solid #e8dfeb;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.faq p { color: var(--muted); }
+
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.resource {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid #eee7f2;
+}
+
+.resource strong {
+  display: block;
+  color: var(--dark);
+}
+
+.resource a {
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 65px;
+  background: var(--dark);
+  color: white;
+  padding: 40px 0;
+}
+
+.footer .small { color: #e3d8ef; }
+
+.footer p { color: #e3d8ef; }
+
+.empty {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  grid-column: 1/-1;
+}
+
+@media(max-width:760px) {
+  .nav { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-art { font-size: 90px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .directory, .rights, .resource-list {
+    grid-template-columns: 1fr;
+  }
+  .searchbar { grid-template-columns: 1fr; }
+}
+
+@media(max-width:420px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero { border-radius: 22px; }
+}
 </style>
 </head>
+
 <body>
+
 <header class="wrap topbar">
- <div class="brand"><span class="logo">✳</span><span>RED DE SALUD SEXUAL</span></div>
- <nav class="nav"><a href="#mapa">Mapa</a><a href="#directorio">Directorio</a><a href="#derechos">Tus derechos</a><a href="#preguntas">Preguntas frecuentes</a></nav>
+  <div class="brand">
+    <span class="logo">✿</span>
+    <span>RED DE SALUD SEXUAL</span>
+  </div>
+
+  <nav class="nav">
+    <a href="#mapa">Mapa</a>
+    <a href="#directorio">Directorio</a>
+    <a href="#derechos">Tus derechos</a>
+    <a href="#preguntas">Preguntas frecuentes</a>
+  </nav>
 </header>
+
 <main class="wrap">
- <section class="hero">
-  <div class="eyebrow">Información clara · Acceso a derechos</div>
-  <h1>Encontrá dónde cuidar tu salud sexual.</h1>
-  <p>Un directorio orientativo de consejerías y servicios de salud sexual y reproductiva en José C. Paz, San Miguel, Pilar y Malvinas Argentinas.</p>
-  <div class="actions"><a class="btn primary" href="#directorio">Buscar un servicio</a><a class="btn ghost" href="#mapa">Explorar el mapa ↓</a></div>
- </section>
 
- <section class="section" id="buscador">
-  <div class="section-head"><div><h2>¿Qué necesitás encontrar?</h2><p class="sub">Elegí una localidad o buscá por nombre, dirección o prestación.</p></div></div>
-  <div class="searchbar"><input id="search" class="field" type="search" placeholder="Ej.: anticoncepción, Derqui, implante…"><select id="locality" class="field"><option value="">Todas las localidades</option><option>José C. Paz</option><option>San Miguel</option><option>Pilar</option><option>Presidente Derqui</option><option>Los Polvorines</option><option>Grand Bourg</option></select></div>
+<section class="hero">
+  <div>
+    <div class="eyebrow">Información clara · Acceso a derechos</div>
+    <h1>Tu salud sexual también es tu derecho.</h1>
+    <p>
+      Encontrá servicios de salud sexual y reproductiva
+      cerca de vos. Información, orientación y acceso
+      a tus derechos en José C. Paz, San Miguel,
+      Pilar y Malvinas Argentinas.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#directorio">Encontrá un servicio</a>
+      <a class="btn secondary" href="#mapa">Explorá el mapa ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-art">🌸</div>
+</section>
+
+<section class="section" id="buscador">
+  <div class="section-head">
+    <h2>¿Qué necesitás encontrar?</h2>
+    <p class="sub">
+      Buscá por nombre, localidad, dirección o prestación.
+    </p>
+  </div>
+
+  <div class="searchbar">
+    <input id="search" class="field" type="search"
+      placeholder="Ej.: anticoncepción, Derqui, implante...">
+
+    <select id="locality" class="field">
+      <option value="">Todas las localidades</option>
+      <option>José C. Paz</option>
+      <option>San Miguel</option>
+      <option>Pilar</option>
+      <option>Presidente Derqui</option>
+      <option>Los Polvorines</option>
+      <option>Grand Bourg</option>
+    </select>
+  </div>
+
   <div class="grid">
-   <article class="tile"><div class="emoji">💊</div><h3>Anticoncepción</h3><p>Orientación y acceso a métodos anticonceptivos.</p></article>
-   <article class="tile"><div class="emoji">🧪</div><h3>ITS y testeos</h3><p>Información sobre prevención, diagnóstico y atención.</p></article>
-   <article class="tile"><div class="emoji">🤝</div><h3>Consejerías</h3><p>Espacios para conversar, preguntar y decidir con información.</p></article>
-   <article class="tile"><div class="emoji">🧡</div><h3>IVE / ILE</h3><p>Orientación sobre derechos y acceso a atención.</p></article>
-   <article class="tile"><div class="emoji">🌈</div><h3>Diversidad</h3><p>Atención respetuosa e integral, sin discriminación.</p></article>
-   <article class="tile"><div class="emoji">📍</div><h3>Centros cercanos</h3><p>Ubicaciones y vías de contacto para consultar.</p></article>
+    <article class="tile">
+      <div class="emoji">💊</div>
+      <h3>Anticoncepción</h3>
+      <p>Orientación y acceso a métodos anticonceptivos.</p>
+    </article>
+
+    <article class="tile">
+      <div class="emoji">🧪</div>
+      <h3>ITS y testeos</h3>
+      <p>Prevención, diagnóstico y atención.</p>
+    </article>
+
+    <article class="tile">
+      <div class="emoji">🤝</div>
+      <h3>Consejerías</h3>
+      <p>Espacios para conversar, preguntar y decidir.</p>
+    </article>
+
+    <article class="tile">
+      <div class="emoji">🧡</div>
+      <h3>IVE / ILE</h3>
+      <p>Orientación sobre derechos y acceso a atención.</p>
+    </article>
+
+    <article class="tile">
+      <div class="emoji">🌈</div>
+      <h3>Diversidad</h3>
+      <p>Atención respetuosa e integral, sin discriminación.</p>
+    </article>
+
+    <article class="tile">
+      <div class="emoji">📍</div>
+      <h3>Centros cercanos</h3>
+      <p>Ubicaciones y vías de contacto para consultar.</p>
+    </article>
   </div>
- </section>
+</section>
 
- <section class="section" id="mapa">
-  <div class="section-head"><div><h2>Mapa interactivo</h2><p class="sub">Ubicá los establecimientos y consultá cómo llegar.</p></div></div>
-  <div id="map-container" class="mapbox"><div class="map-placeholder"><div class="pin">🗺️</div><h3>El mapa se conecta acá</h3><p>Cuando tengas publicado tu Google My Maps, pegá el enlace de inserción en la variable <code>MAP_EMBED_URL</code> del archivo <code>script.js</code>.</p><p class="small">También podés compartir el mapa como enlace desde esta sección.</p></div></div>
- </section>
+<section class="section" id="mapa">
+  <div class="section-head">
+    <h2>Explorá el mapa</h2>
+    <p class="sub">
+      Ubicá los establecimientos y consultá cómo llegar.
+    </p>
+  </div>
 
- <section class="section" id="directorio">
-  <div class="section-head"><div><h2>Directorio de consejerías y servicios</h2><p class="sub">Los registros iniciales son pistas para ampliar y verificar, no una certificación de que exista una consejería activa.</p></div></div>
+  <div id="map-container" class="mapbox">
+    <div class="map-placeholder">
+      <div class="emoji">🗺️</div>
+      <h3>Mapa de acceso a la salud sexual y reproductiva</h3>
+      <p>Estamos preparando el mapa interactivo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="directorio">
+  <div class="section-head">
+    <h2>Directorio de servicios</h2>
+    <p class="sub">
+      Conocé los establecimientos y consultá las prestaciones disponibles.
+    </p>
+  </div>
+
   <div id="directory" class="directory"></div>
-  <p class="small">¿Encontraste un dato desactualizado? Confirmalo con el establecimiento antes de tomar decisiones o trasladarte.</p>
- </section>
 
- <section class="section" id="derechos">
-  <div class="section-head"><div><h2>Conocé tus derechos</h2><p class="sub">La atención en salud sexual y reproductiva forma parte del derecho a la salud.</p></div></div>
+  <p class="small">
+    Los datos y horarios deben confirmarse directamente
+    con cada establecimiento.
+  </p>
+</section>
+
+<section class="section" id="derechos">
+  <div class="section-head">
+    <h2>Conocé tus derechos</h2>
+    <p class="sub">
+      La salud sexual y reproductiva es parte de tu derecho a la salud.
+    </p>
+  </div>
+
   <div class="rights">
-   <article class="right-item"><h3>🔒 Privacidad y confidencialidad</h3><p>Tenés derecho a recibir atención respetuosa y confidencial, dentro del marco legal vigente.</p></article>
-   <article class="right-item"><h3>🗣️ Información para decidir</h3><p>Podés pedir información clara, suficiente y comprensible para tomar decisiones autónomas.</p></article>
-   <article class="right-item"><h3>🧑‍⚕️ Atención sin discriminación</h3><p>La atención debe respetar tu identidad, orientación sexual, edad y situación personal.</p></article>
-   <article class="right-item"><h3>💗 Decisiones reproductivas</h3><p>Tenés derecho a recibir orientación sobre anticoncepción y sobre las prestaciones reconocidas por la legislación argentina.</p></article>
+    <article class="right-item">
+      <h3>🔒 Privacidad y confidencialidad</h3>
+      <p>Tenés derecho a recibir atención respetuosa y confidencial.</p>
+    </article>
+
+    <article class="right-item">
+      <h3>🗣️ Información para decidir</h3>
+      <p>Podés pedir información clara para tomar decisiones autónomas.</p>
+    </article>
+
+    <article class="right-item">
+      <h3>🧑‍⚕️ Atención sin discriminación</h3>
+      <p>Tu identidad y orientación deben ser respetadas.</p>
+    </article>
+
+    <article class="right-item">
+      <h3>💗 Decisiones reproductivas</h3>
+      <p>Tenés derecho a recibir orientación sobre anticoncepción y prestaciones reconocidas por la ley.</p>
+    </article>
   </div>
-  <div class="notice" style="margin-top:16px">Esta sección es informativa y no reemplaza una consulta profesional ni el asesoramiento jurídico. Para situaciones concretas, consultá un servicio de salud o una fuente oficial.</div>
- </section>
 
- <section class="section faq" id="preguntas">
-  <div class="section-head"><div><h2>Preguntas frecuentes</h2><p class="sub">Respuestas breves para orientarte.</p></div></div>
-  <details><summary>¿Necesito tener obra social para atenderme?</summary><p>Los efectores públicos brindan atención en el marco del sistema público de salud. Consultá con cada establecimiento las condiciones prácticas de admisión y la documentación necesaria.</p></details>
-  <details><summary>¿Tengo que sacar turno?</summary><p>Depende del establecimiento y de la prestación. El directorio debe indicar la modalidad cuando esté confirmada; si no figura, llamá antes de acercarte.</p></details>
-  <details><summary>¿Puedo consultar si soy adolescente?</summary><p>Las personas adolescentes tienen derechos específicos a recibir información y atención en salud sexual y reproductiva. La autonomía y el consentimiento se rigen por la normativa vigente y deben evaluarse según la práctica y la situación.</p></details>
-  <details><summary>¿El mapa garantiza que el servicio esté funcionando?</summary><p>No. Los horarios y prestaciones pueden cambiar. La página distingue datos publicados de datos pendientes de verificación y recomienda confirmar directamente con el establecimiento.</p></details>
- </section>
+  <div class="notice" style="margin-top:18px">
+    Esta sección es informativa y no reemplaza una consulta profesional.
+  </div>
+</section>
 
- <section class="section" id="recursos">
-  <div class="section-head"><div><h2>Recursos y teléfonos útiles</h2><p class="sub">Fuentes oficiales para ampliar información y consultar derechos.</p></div></div>
+<section class="section faq" id="preguntas">
+  <div class="section-head">
+    <h2>Preguntas frecuentes</h2>
+    <p class="sub">Respuestas para orientarte.</p>
+  </div>
+
+  <details>
+    <summary>¿Necesito tener obra social para atenderme?</summary>
+    <p>Los efectores públicos brindan atención en el marco del sistema público de salud. Consultá con cada establecimiento las condiciones de admisión.</p>
+  </details>
+
+  <details>
+    <summary>¿Tengo que sacar turno?</summary>
+    <p>Depende del establecimiento y de la prestación. Es recomendable consultar antes de acercarte.</p>
+  </details>
+
+  <details>
+    <summary>¿Puedo consultar si soy adolescente?</summary>
+    <p>Las personas adolescentes tienen derecho a recibir información y atención en salud sexual y reproductiva, de acuerdo con la normativa vigente.</p>
+  </details>
+
+  <details>
+    <summary>¿El mapa garantiza que el servicio esté funcionando?</summary>
+    <p>No. Los horarios y prestaciones pueden cambiar. Recomendamos confirmar directamente con cada establecimiento.</p>
+  </details>
+</section>
+
+<section class="section" id="recursos">
+  <div class="section-head">
+    <h2>Recursos y teléfonos útiles</h2>
+    <p class="sub">Fuentes oficiales para ampliar información.</p>
+  </div>
+
   <div class="resource-list">
-   <div class="resource"><strong>Línea Salud Sexual nacional</strong><p>0800-222-3444 · orientación gratuita.</p><a href="https://www.argentina.gob.ar/salud/sexual" target="_blank" rel="noopener">Información oficial ↗</a></div>
-   <div class="resource"><strong>Salud sexual y reproductiva</strong><a href="https://www.argentina.gob.ar/salud/sexual" target="_blank" rel="noopener">Información oficial ↗</a></div>
-   <div class="resource"><strong>Acceso a la interrupción voluntaria y legal del embarazo</strong><a href="https://www.argentina.gob.ar/salud/sexual/acceso-la-interrupcion-del-embarazo-ive-ile" target="_blank" rel="noopener">Información oficial IVE/ILE ↗</a></div>
-   <div class="resource"><strong>Provincia de Buenos Aires</strong><p>148, opción 3 · consultas sobre métodos anticonceptivos, lunes a viernes de 9 a 17 h (según información provincial publicada; confirmar vigencia).</p><a href="https://www.ms.gba.gov.ar/" target="_blank" rel="noopener">Ministerio de Salud bonaerense ↗</a></div>
+    <div class="resource">
+      <strong>Línea Salud Sexual nacional</strong>
+      <p>0800-222-3444 · orientación gratuita.</p>
+      <a href="https://www.argentina.gob.ar/salud/sexual" target="_blank">Información oficial ↗</a>
+    </div>
+
+    <div class="resource">
+      <strong>Salud sexual y reproductiva</strong>
+      <p>Información sobre prevención y derechos.</p>
+      <a href="https://www.argentina.gob.ar/salud/sexual" target="_blank">Consultar ↗</a>
+    </div>
+
+    <div class="resource">
+      <strong>Acceso a IVE / ILE</strong>
+      <p>Información oficial sobre el acceso a estas prestaciones.</p>
+      <a href="https://www.argentina.gob.ar/salud/sexual/acceso-la-interrupcion-del-embarazo-ive-ile" target="_blank">Consultar ↗</a>
+    </div>
+
+    <div class="resource">
+      <strong>Ministerio de Salud de la Provincia</strong>
+      <p>Información y recursos provinciales.</p>
+      <a href="https://www.ms.gba.gov.ar/" target="_blank">Consultar ↗</a>
+    </div>
   </div>
- </section>
- <section class="section"><div class="notice"><strong>Importante:</strong> este sitio es un proyecto informativo académico. No es un servicio de emergencias ni representa oficialmente a los municipios o establecimientos mencionados. Los datos deben verificarse antes de difundirse como vigentes. No ingreses información personal o médica en esta página.</div></section>
+</section>
+
+<section class="section">
+  <div class="notice">
+    <strong>Importante:</strong> este sitio es un proyecto informativo académico.
+    No es un servicio de emergencias ni representa oficialmente
+    a los municipios o establecimientos mencionados.
+    Los datos deben verificarse antes de difundirse.
+    No ingreses información personal o médica en esta página.
+  </div>
+</section>
+
 </main>
-<footer class="footer"><div class="wrap"><strong>Mapa de Acceso a la Salud Sexual y Reproductiva</strong><p>Proyecto de orientación territorial · Zona noroeste del Gran Buenos Aires</p><span class="small" style="color:#c2d9d1">Última actualización del sitio: <span id="updated"></span> · Fuentes y prestaciones sujetas a verificación.</span></div></footer>
+
+<footer class="footer">
+  <div class="wrap">
+    <strong>Mapa de Acceso a la Salud Sexual y Reproductiva</strong>
+    <p>Proyecto de orientación territorial · Zona noroeste del Gran Buenos Aires</p>
+    <span class="small">
+      Última actualización: <span id="updated"></span>
+      · Fuentes y prestaciones sujetas a verificación.
+    </span>
+  </div>
+</footer>
+
 <script src="script.js"></script>
-</body></html>
+
+</body>
+</html>
